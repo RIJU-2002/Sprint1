@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <!-- Role selection -->
+    <div class="role-selection">
+      <label for="role">Select Role:</label>
+      <select id="role" name="role">
+        <option value="" disabled selected>Select Role</option>
+        <option value="customer">Customer</option>
+        <option value="manager">Manager</option>
+      </select>
+    </div>
+
+    <!-- Customer login form -->
+    <div id="customer-form" class="form" style="display: none;">
+      <form id="customerLoginForm">
+        <input type="text" name="username" id="username" placeholder="Enter Username" required>
+        <input type="password" name="customerPassword" id="customerPassword" placeholder="Password" required>
+        <button type="submit">Login as Customer</button>
+        <div class="login-link">
+            Don't have an account? <a href="../registration_page/registration.html">Register</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Manager login form -->
+    <div id="manager-form" class="form" style="display: none;">
+      <form id="managerLoginForm">
+        <input type="text" name="username" id="managerusername" placeholder="Enter Username" required>
+        <input type="password" name="managerPassword" id="managerPassword" placeholder="Password" required>
+        <button type="submit">Login as Manager</button>
+        <div class="login-link">
+           Don't have an account? <a href="../registration_page/registration.html">Register</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

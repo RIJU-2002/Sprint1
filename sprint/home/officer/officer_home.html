@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">MyService</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">TRACKING</a></li>
+        <li><a href="#">DELIVERY STATUS</a></li>
+        <li><a href="#">PICKUP SCHEDULING</a></li>
+        <li><a href="#">PREVIOUS BOOKING</a></li>
+        <li><a href="../../login_page/login.html">LOGOUT</a></li>
+      </ul>
+    </nav>
+    <div class="user-info">Welcome, Officer <span id="username">User</span></div>
+  </header>
+
+  <section class="welcome-section">
+    <h1>Welcome to MyService Portal!</h1>
+    <p>We are delighted to serve you with our booking and tracking services.</p>
+  </section>
+
+  <script>
+    // Example dynamic username (replace or fetch as needed)
+    document.getElementById('username').textContent = localStorage.getItem('username') || 'User';
+  </script>
+</body>
+</html>

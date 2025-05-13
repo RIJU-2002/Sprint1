@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Service</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Parcel Booking Form</h2>
+    <form id="bookingForm">
+      <!-- Sender Info -->
+      <fieldset>
+        <legend>Sender Information</legend>
+        <label>Name: <input type="text" id="senderName" readonly></label>
+        <label>Address: <input type="text" id="senderAddress" readonly></label>
+        <label>Contact: <input type="text" id="senderContact" readonly></label>
+      </fieldset>
+
+      <!-- Receiver Info -->
+      <fieldset>
+        <legend>Receiver Information</legend>
+        <label>Name: <input type="text" id="receiverName" required></label>
+        <label>Address: <input type="text" id="receiverAddress" required></label>
+        <label>Pin Code: <input type="text" id="receiverPin"></label>
+        <label>Contact: <input type="tel" id="receiverContact" required pattern="^\d{10}$"></label>
+      </fieldset>
+
+      <!-- Parcel Details -->
+      <fieldset>
+        <legend>Parcel Details</legend>
+        <label>Size & Weight (kg): <input type="number" id="parcelWeight" min="0.1" step="0.1" required></label>
+        <label>Description: <input type="text" id="parcelDescription" required></label>
+      </fieldset>
+
+      <!-- Shipping Options -->
+      <fieldset>
+        <legend>Shipping Options</legend>
+        <label>
+          Delivery Speed:
+          <select id="shippingSpeed" required>
+            <option value="">Select</option>
+            <option value="standard">Standard</option>
+            <option value="express">Express</option>
+          </select>
+          <span id="shippingChargeMessage" style="margin-left: 10px; color: #007bff; font-weight: 500;"></span>
+        </label>
+        <label>
+          Packaging:
+          <select id="packagingOption" required>
+            <option value="">Select</option>
+            <option value="standard">Standard</option>
+            <option value="custom">Custom</option>
+            <option value="eco">Eco-Friendly</option>
+            <option value="fragile">Fragile</option>
+          </select>
+          <span id="packagingChargeMessage" style="margin-left: 10px;padding-top: 2px; color: #007bff; font-weight: 500;"></span>
+        </label>
+      </fieldset>
+
+      <!-- Date & Time -->
+      <fieldset>
+        <legend>Pickup/Drop-off Time</legend>
+        <label>Date: <input type="date" id="pickupDate" required></label>
+        <label>Time: <input type="time" id="pickupTime" required></label>
+      </fieldset>
+
+      <!-- Payment -->
+      <fieldset>
+        <legend>Cost & Payment</legend>
+        <label>Calculated Cost: <input type="text" id="calculatedCost" readonly></label>
+        <label>
+          Payment Method:
+          <select id="paymentMethod" required>
+            <option value="">Select</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="upi">UPI</option>
+            <option value="cod">Cash on Delivery</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Additional Services -->
+      <fieldset id="additional-services">
+        <legend>Additional Services</legend>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="insurance"> Insurance</label>
+            <label><input type="checkbox" id="tracking"> Enable Tracking</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Book Parcel</button>
+    </form>
+  </div>
+
+  <script src="booking.js"></script>
+</body>
+</html>
